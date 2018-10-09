@@ -38,7 +38,7 @@ class TestStubbing < Minitest::Test
   def test_attempting_to_partially_mock_existing_mock_is_noop
     m = flexmock("A")
     flexmock(m)
-    assert ! m.instance_variables.include?(:@flexmock_proxy.flexmock_as_name)
+    refute m.instance_variables.include?(FlexMock::Util.as_name(:@flexmock_proxy))
   end
 
   def test_forcibly_removing_proxy_causes_failure

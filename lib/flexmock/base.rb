@@ -9,7 +9,7 @@
 # above copyright notice is included.
 #+++
 
-require 'flexmock/symbol_extensions'
+require 'flexmock/util'
 require 'flexmock/object_extensions'
 require 'flexmock/class_extensions'
 

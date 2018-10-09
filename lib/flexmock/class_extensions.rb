@@ -7,7 +7,7 @@ class Class
     ancestors.any? do |m|
       methods = m.instance_methods(false)
       next if methods.include?(:__flexmock_proxy) # This is a partial mock module
-      m.instance_methods(false).include?(method_name.flexmock_as_name)
+      m.instance_methods(false).include?(FlexMock::Util.as_name(method_name))
     end
   end
 end
